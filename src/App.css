@@ -1,38 +1,97 @@
-.App {
+@font-face {
+  font-family: "manrope";
+  src: url("./fonts/Manrope-Bold.woff2") format("woff2");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+p {
+  margin: 0;
+}
+
+body {
+  font-family: "manrope", sans-serif;
+  font-size: 1.75rem;
+  background-color: hsl(220, 22%, 16%);
+  color: hsl(193, 38%, 86%);
+  padding: 0 1rem;
+}
+
+.card {
+  background-color: hsl(217, 19%, 24%);
+  max-width: 32rem;
+  min-height: 20rem;
+  padding: 2rem 1.5rem;
+  border-radius: 0.75rem;
+  margin: 20vh auto;
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+.quote-container {
+  padding-bottom: 2.5rem;
+  margin-bottom: 1.5rem;
+  background-image: url("./images/pattern-divider-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.id {
+  color: hsl(150, 100%, 66%);
+  font-size: 0.6875rem;
+  letter-spacing: 4.8px;
+  text-transform: uppercase;
+  padding-bottom: 1rem;
+}
+
+.quote {
+  font-size: 1.5625rem;
+}
+
+.button {
+  cursor: pointer;
+  background-color: hsl(150, 100%, 66%);
+  border: none;
+  padding: 1rem;
+  border-radius: 100px;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: box-shadow 0.3s;
+}
+
+.button:hover {
+  box-shadow: 0 0 18px hsl(150, 100%, 66%);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .App {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card {
+    width: 32rem;
+    padding: 2rem;
+  }
+
+  .quote-container {
+    background-image: url("./images/pattern-divider-desktop.svg");
   }
 }
